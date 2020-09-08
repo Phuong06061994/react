@@ -34,10 +34,10 @@ function News_Home() {
                     </div>{/* end col */}
                     <div className="blog-meta big-meta col-md-8">
                         <h4><a href="tech-single.html" >{item.title}</a></h4>
-                        <p>Aenean interdum arcu blandit, vehicula magna non, placerat elit. Mauris et pharetratortor. Suspendissea sodales urna. In at augue elit. Vivamus enim nibh, maximus ac felis nec, maximus tempor odio.</p>
-                        <small className="firstsmall"><a className="bg-orange" href={News[1]?.urlToImage} >Gadgets</a></small>
-                        <small><a href="tech-single.html" >21 July, 2017</a></small>
-                        <small><a href="tech-author.html" >by Matilda</a></small>
+                        <p>{item.description}</p>
+                        <small className="firstsmall"><a className="bg-orange">Gadgets</a></small>
+                        <small><a href="tech-single.html" >{item.publishedAt}</a></small>
+                        <small><a href="tech-author.html" >{item.author}</a></small>
                         <small><a href="tech-single.html" ><i className="fa fa-eye" /> 1114</a></small>
                     </div>{/* end meta */}
                 </div>{/* end blog-box */}

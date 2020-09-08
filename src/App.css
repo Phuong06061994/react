@@ -1108,7 +1108,7 @@ div.tab button:hover {
 .blog-meta.big-meta h4 {
     padding: 1rem 0 0.6rem;
     margin: 0;
-    font-size: 28px;
+    font-size: 22px;
 }
 
 .blog-meta.big-meta p {
@@ -1286,8 +1286,8 @@ hr.invis3 {
     border-bottom: 1px solid #edeff2;
 }
 
-.blog-custom-build .blog-meta.big-meta h4 {
-    font-size: 28px;
+.blog-custom-build {
+    font-size: 22px;
     margin: 0;
     padding: 0 0 1rem;
 }

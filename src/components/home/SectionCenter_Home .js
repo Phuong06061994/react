@@ -42,7 +42,7 @@ function SectionCenter_Home() {
                 <div className="trend-videos">
                   <div className="blog-box">
                     <div className="post-media">
-                      <a href="tech-single.html" title>
+                      <a href="" title>
                         <img src="upload/tech_video_01.jpg" alt="" className="img-fluid" />
                         <div className="hovereffect">
                           <span className="videohover" />
@@ -50,7 +50,7 @@ function SectionCenter_Home() {
                       </a>
                     </div>{/* end media */}
                     <div className="blog-meta">
-                      <h4><a href="tech-single.html" title>We prepared the best 10 laptop presentations for you</a></h4>
+                      <h4><a href="https://www.youtube.com/watch?v=YjGoDh-Qqkg&t=177s" title>We prepared the best 10 laptop presentations for you</a></h4>
                     </div>{/* end meta */}
                   </div>{/* end blog-box */}
                   <hr className="invis" />

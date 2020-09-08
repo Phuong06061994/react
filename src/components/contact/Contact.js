@@ -1,5 +1,5 @@
 import React from 'react';
-import TitlePage from './TitlePage';
+import TitlePage from '../common/TitlePage';
 function Contact() {
   return (
     <>

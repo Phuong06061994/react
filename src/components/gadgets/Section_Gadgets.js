@@ -1,5 +1,5 @@
 import React from 'react';
-import TitlePage from '../TitlePage';
+import TitlePage from '../common/TitlePage';
 import News_Gadgets from './News_Gadgets';
 //import './Section.css';
 
