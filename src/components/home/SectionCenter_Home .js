@@ -6,7 +6,12 @@ function SectionCenter_Home() {
       <div className="container">
         <div className="row">
           <div className="col-lg-9 col-md-12 col-sm-12 col-xs-12">
+          <div className="page-wrapper">
+            <div className="blog-top clearfix">
+                <h4 className="pull-left">Recent News <a href="#"><i className="fa fa-rss" /></a></h4>
+            </div>{/* end blog-top */}
            <News_Home />
+           </div>
             <hr className="invis" />
             <div className="row">
               <div className="col-md-12">
