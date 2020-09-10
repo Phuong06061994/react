@@ -1,6 +1,7 @@
 import React, { useState, Component, useEffect } from 'react';
+import {NavLink} from 'react-router-dom'
 import axios from 'axios';
-
+import Detail from '../detail-page/index'
 
 function News_Home() {
     const [News, setNews] = useState([]);
@@ -33,7 +34,7 @@ function News_Home() {
                         </div>{/* end media */}
                     </div>{/* end col */}
                     <div className="blog-meta big-meta col-md-8">
-                        <h4><a href="tech-single.html" >{item.title}</a></h4>
+                        <h4><NavLink to ={`\Detail\${index}`}>{item.title}</NavLink></h4>
                         <p>{item.description}</p>
                         <small className="firstsmall"><a className="bg-orange">Gadgets</a></small>
                         <small><a href="tech-single.html" >{item.publishedAt}</a></small>
