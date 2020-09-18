@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import TaskItem from './TaskItem';
 import axios from 'axios';
-import ModalTask from './Modal_Task';
+import ModalCreate from './Modal_Create'
+
 function TaskList() {
     const [Tasks, setTasks] = useState([]);
     const [isUpdate, setUpdate] = useState(false);
@@ -45,7 +46,7 @@ function TaskList() {
                             onClick={() => handleCreate()}>
                             <span className="fa fa-plus mr-2"></span>Tạo mới
                 </button>
-                {isClick&&<ModalTask status={isClick} handleUpdate={isUpdate} handleShowModal={handleModal} data={null} /> } 
+                {isClick&&<ModalCreate status={isClick} handleUpdate={handleUpdate} handleShowModal={handleModal} /> } 
                     </div>
                     <div className="row mt-15">
                         <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">

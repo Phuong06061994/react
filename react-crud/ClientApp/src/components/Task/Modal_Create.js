@@ -2,19 +2,12 @@ import React, { useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter,Form,FormGroup, Label,Input } from 'reactstrap';
 import axios from 'axios';
 
-function ModalCustom(props) {
-  const [item,setItem] = useState();
+function Modal_Creacte(props) {
   const {
-    buttonLabel,
     className
   } = props;
-  if(props.data != null){
-    console.log('update');
-    const {id,name,status,startDate,endDate} = props.data;
-  setItem({
-    id,name,status,startDate,endDate
-  })
-  }
+  const [item,setItem] = useState({})
+
   const toggle = () => {
     props.handleShowModal(props.status)
   }
@@ -27,12 +20,9 @@ function ModalCustom(props) {
   }
 
   const handleSave = (item) => {
-    const newItem = {...item};
-    newItem.id = item.id;
-    console.log(item.id);
-    if(item.id === undefined){
-      item.id = 0;
-    }
+    const newItem = {...item, id:0};
+    // setItem({...item,id:0})
+    console.log(newItem);
     axios({
       method:"post",
       url:`https://localhost:44350/api/task`,
@@ -54,24 +44,20 @@ function ModalCustom(props) {
         <Form>
       <FormGroup>
         <Label for="name">Tên</Label>
-        <Input type="text" name="name" id="exampleEmail" onChange={handleChange} value={item?.name} />
+        <Input type="text" name="name" id="exampleEmail" onChange={handleChange} />
       </FormGroup>
       <FormGroup>
         <Label for="startDate">Ngày bắt đầu</Label>
-        <Input type="date" name="startDate" id="startDate" onChange={handleChange} value={item?.startDate}/>
+        <Input type="date" name="startDate" id="startDate" onChange={handleChange} />
       </FormGroup>
       <FormGroup>
         <Label for="endDate">Ngày bắt kết thúc</Label>
-        <Input type="date" name="endDate" id="endDate" onChange={handleChange} value={item?.endDate}/>
+        <Input type="date" name="endDate" id="endDate" onChange={handleChange} />
       </FormGroup>
       <FormGroup>
         <Label for="status">Trạng thái</Label>
-        <Input type="number" name="status" id="status" onChange={handleChange} value={item?.status}>
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5</option>
+        <Input type="number" name="status" id="status" onChange={handleChange} >
+         
         </Input>
       </FormGroup>
       </Form>
@@ -84,4 +70,4 @@ function ModalCustom(props) {
     </div>
   );
   }
-  export default ModalCustom;
+  export default Modal_Creacte;

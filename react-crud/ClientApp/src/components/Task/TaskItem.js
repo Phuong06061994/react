@@ -1,6 +1,6 @@
 import React, { useState, render } from 'react';
 import Moment from 'react-moment';
-import ModalTask from './Modal_Task';
+import ModalTask from './Modal_Edit';
 import axios from 'axios';
 
 function TaskItem(props) {
