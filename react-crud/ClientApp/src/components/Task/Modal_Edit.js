@@ -59,12 +59,10 @@ const {id,name,status,startDate,endDate} = props.data;
       </FormGroup>
       <FormGroup>
         <Label for="status">Trạng thái</Label>
-        <Input type="number" name="status" id="status" onChange={handleChange} value={item.status}>
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5</option>
+        <Input type="select" name="status" id="status" onChange={handleChange} value={item.status}>
+        <option value = {-1}>Đang thực hiện</option>
+         <option value = {0}>Chưa thực hiện</option>
+         <option value = {1}>Đã hoàn thành</option>
         </Input>
       </FormGroup>
       </Form>

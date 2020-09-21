@@ -12,18 +12,18 @@ function TaskItem(props) {
         setItemCur(item);
     }
 
-    function handleDelete(id){
+    function handleDelete(id) {
         axios({
-            method:"delete",
-            url:`https://localhost:44350/api/task/${id}`,
+            method: "delete",
+            url: `https://localhost:44350/api/task/${id}`,
             data: null
-          }).then(res=> {
+        }).then(res => {
             console.log('Success')
             props.handleUpdate(false)
-            
-          }).catch(err=> {
+
+        }).catch(err => {
             console.log("Error");
-          })
+        })
     }
 
     function handleModal(val) {
@@ -44,40 +44,37 @@ function TaskItem(props) {
 
     return (
         <>
-        {props.listTasks.map((item, index) => {
-        return (
-            <tr key={index}>
-                <td>{index + 1}</td>
-                <td>{item.name}</td>
-                <td className="text-center">
-                    {/* <Moment></Moment> */}
-                    {item.startDate}
-                </td>
-                <td className="text-center">
-                    {/* <Moment></Moment> */}
-                    {item.endDate}
-                </td>
-                <td className="text-center">
-                    {setStatus(item.status)}
-                </td>
-                <td className="text-center">
-                    <button
-                        type="button"
-                        className="btn btn-warning"
-                        onClick={() => handleShow(item)}>
-                        <span className="fa fa-pencil mr-2"></span>Sửa
-                    </button>
-                    &nbsp;
-                    <button
-                        type="button" className="btn btn-danger"
-                        onClick={() => handleDelete(item.id)}>
-                        <span className="fa fa-trash mr-2"></span>Xóa
-                    </button>
-                    {isClick&&<ModalTask status={isClick} handleUpdate={props.handleUpdate} handleShowModal={handleModal} data={itemCur} /> } 
-                </td>
-            </tr>
-        )
-    })}
+            {props.listTasks.map((item, index) => {
+                return (
+                    <tr key={index}>
+                        <td>{index + 1}</td>
+                        <td>{item.name}</td>
+                        <td className="text-center">
+                            <Moment format="DD-MM-YYYY">{item.startDate}</Moment>
+                        </td>
+                        <td className="text-center">
+                            <Moment format="DD-MM-YYYY">{item.endDate}</Moment>
+                        </td>
+                        <td className="text-center">
+                            {setStatus(item.status)}
+                        </td>
+                        <td className="text-center">
+                            <button
+                                type="button"
+                                className="btn btn-warning"
+                                onClick={() => handleShow(item)}>
+                                <span className="fa fa-pencil mr-2"></span>Sửa
+                            </button>&nbsp;
+                            <button
+                                type="button" className="btn btn-danger"
+                                onClick={() => handleDelete(item.id)}>
+                                <span className="fa fa-trash mr-2"></span>Xóa
+                            </button>
+                            {isClick && <ModalTask status={isClick} handleUpdate={props.handleUpdate} handleShowModal={handleModal} data={itemCur} />}
+                        </td>
+                    </tr>
+                )
+            })}
         </>
     )
 }

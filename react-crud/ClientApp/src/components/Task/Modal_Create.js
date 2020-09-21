@@ -56,8 +56,10 @@ function Modal_Creacte(props) {
       </FormGroup>
       <FormGroup>
         <Label for="status">Trạng thái</Label>
-        <Input type="number" name="status" id="status" onChange={handleChange} >
-         
+        <Input type="select" name="status" id="status" onChange={handleChange} >
+         <option value = {-1}>Đang thực hiện</option>
+         <option value = {0}>Chưa thực hiện</option>
+         <option value = {1}>Đã hoàn thành</option>
         </Input>
       </FormGroup>
       </Form>
